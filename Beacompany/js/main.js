@@ -2,12 +2,20 @@ window.addEventListener("load", () => {
     const slider = document.querySelector(".hero-sec .visual");
     if (!slider || typeof Swiper === "undefined") return;
 
+    const firstSlide = slider.querySelector(".project-slide");
+    if (!firstSlide) return;
+
+    // Shift the initial slide track right by one slide slot.
+    const slideGap = window.innerWidth <= 900 ? 12 : 20;
+    const oneSlideSlot = firstSlide.getBoundingClientRect().width + slideGap;
+
     new Swiper(slider, {
         direction: "horizontal",
         loop: true,
         initialSlide: 1,
         centeredSlides: true,
         slidesPerView: "auto",
+        slidesOffsetBefore: oneSlideSlot,
         watchSlidesProgress: true,
         spaceBetween: 20,
         speed: 650,
