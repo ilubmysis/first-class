@@ -6,16 +6,16 @@
     <title>BE:A COMPANY</title>
     <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="../npm/swiper/swiper-bundle.min.js" defer></script>
-    <script src="js/main.js?v=3" defer></script>
+    <script src="js/main.js?v=4" defer></script>
 </head>
 <body>
     <div id="wrap">
         <header class="site-header">
             <div class="header-inner">
-                <a class="brand-mark" href="#" aria-label="BE:A Company home">BE<span>:</span>A</a>
+                <a class="brand-mark" href="#" aria-label="BE:A Company home">
+                    <img src="img/logo_white.svg" alt="BE:A Company">
+                </a>
                 <nav class="main-nav" aria-label="Main navigation">
                     <div class="nav-about">
                         <a href="#about">ABOUT <span class="nav-caret" aria-hidden="true"></span></a>
@@ -33,19 +33,19 @@
 
         <main>
             <section class="hero-sec" aria-label="Featured projects">
-                <div class="swiper visual">
-                    <div class="swiper-wrapper">
-                        <article class="swiper-slide project-slide">
+                <div class="visual">
+                    <div class="visual-track">
+                        <article class="project-slide">
                             <img class="project-image" src="img/12_인스케이프양양호텔-scaled.jpg" alt="Inscape Yangyang Hotel project">
                             <div class="project-caption">
                                 <div>
-                                    <h1>INSCAPE YANGYANG HOTEL BY PARNAS</h1>
+                                    <h2>INSCAPE YANGYANG HOTEL BY PARNAS</h2>
                                     <p>ART DIRECTING / FIDES DEVELOPMENT <span>|</span> 2022</p>
                                 </div>
                                 <a href="#project">View More</a>
                             </div>
                         </article>
-                        <article class="swiper-slide project-slide">
+                        <article class="project-slide">
                             <img class="project-image" src="img/순천만.png" alt="Suncheonman Garden Market">
                             <div class="project-caption">
                                 <div>
@@ -55,7 +55,7 @@
                                 <a href="#project">View More</a>
                             </div>
                         </article>
-                        <article class="swiper-slide project-slide">
+                        <article class="project-slide">
                             <img class="project-image" src="img/순천남문터광장.jpg" alt="Suncheon Nammunteo Square">
                             <div class="project-caption">
                                 <div>
@@ -66,19 +66,21 @@
                             </div>
                         </article>
                     </div>
-
-                    <div class="visual-controls" aria-label="Project slider controls">
-                        <button class="visual-prev" type="button" aria-label="Previous project">
-                            <img src="img/arrow-left.svg" alt="">
-                        </button>
-                        <div class="swiper-pagination"></div>
-                        <button class="visual-next" type="button" aria-label="Next project">
-                            <img src="img/arrow-right.svg" alt="">
-                        </button>
+                </div>
+                <div class="visual-controls" aria-label="Project slider controls">
+                    <button class="visual-prev" type="button" aria-label="Previous project">
+                        <img src="img/arrow-left.svg" alt="">
+                    </button>
+                    <div class="visual-pagination" aria-label="Choose project">
+                        <button type="button" aria-label="Project 1"></button>
+                        <button type="button" aria-label="Project 2"></button>
+                        <button type="button" aria-label="Project 3"></button>
                     </div>
+                    <button class="visual-next" type="button" aria-label="Next project">
+                        <img src="img/arrow-right.svg" alt="">
+                    </button>
                 </div>
             </section>
-
         </main>
     </div>
 </body>
