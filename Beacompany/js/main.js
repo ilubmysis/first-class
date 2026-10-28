@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
     const visualSwiper = new Swiper(slider, {
         direction: "horizontal",
         loop: true,
+        initialSlide: 0,
         centeredSlides: true,
         centeredSlidesBounds: false,
         slidesPerView: "auto",
