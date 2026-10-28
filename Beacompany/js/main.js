@@ -4,8 +4,8 @@ window.addEventListener("load", () => {
 
     const visualSwiper = new Swiper(slider, {
         direction: "horizontal",
-        loop: true,
-        initialSlide: 0,
+        loop: false,
+        initialSlide: 1,
         centeredSlides: true,
         centeredSlidesBounds: false,
         slidesPerView: "auto",
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             visualSwiper.update();
-            visualSwiper.slideToLoop(0, 0, false);
+            visualSwiper.slideTo(1, 0, false);
             visualSwiper.update();
         });
     });
@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
         if (!image.complete) {
             const refreshSlider = () => {
                 visualSwiper.update();
-                visualSwiper.slideToLoop(0, 0, false);
+                visualSwiper.slideTo(1, 0, false);
                 visualSwiper.update();
             };
 
