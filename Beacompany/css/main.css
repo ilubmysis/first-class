@@ -127,19 +127,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-sec .swiper-wrapper {
-    overflow: visible;
-}
-
-.hero-sec .project-slide {
-    visibility: visible;
-}
-
-.hero-sec .swiper-wrapper { align-items: flex-start; }
-
-.hero-sec .swiper-slide-next,
-.hero-sec .swiper-slide-prev {
-    visibility: visible !important;
-    opacity: 0.5;
+    align-items: flex-start;
 }
 
 .hero-sec .project-slide {
