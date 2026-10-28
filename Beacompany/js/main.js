@@ -30,25 +30,26 @@ window.addEventListener("load", () => {
         }
     });
 
-    // Recalculate slide positions after image dimensions are available.
-    const images = slider.querySelectorAll("img");
-    let pendingImages = 0;
+    // Let the browser finish layout before recalculating the initial loop position.
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            visualSwiper.update();
+            visualSwiper.slideToLoop(0, 0, false);
+            visualSwiper.update();
+        });
+    });
 
-    images.forEach((image) => {
+    // Recalculate again when any project image finishes loading.
+    slider.querySelectorAll("img").forEach((image) => {
         if (!image.complete) {
-            pendingImages += 1;
+            const refreshSlider = () => {
+                visualSwiper.update();
+                visualSwiper.slideToLoop(0, 0, false);
+                visualSwiper.update();
+            };
+
             image.addEventListener("load", refreshSlider, { once: true });
             image.addEventListener("error", refreshSlider, { once: true });
         }
     });
-
-    function refreshSlider() {
-        pendingImages -= 1;
-        if (pendingImages <= 0) {
-            visualSwiper.update();
-            visualSwiper.slideToLoop(0, 0, false);
-        }
-    }
-
-    visualSwiper.update();
 });
