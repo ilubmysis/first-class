@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
         if (!image.complete) {
             const refreshSlider = () => {
                 visualSwiper.update();
-                visualSwiper.slideTo(1, 0, false);
+                visualSwiper.slideToLoop(1, 0, false);
                 visualSwiper.update();
             };
 
