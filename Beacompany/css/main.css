@@ -87,8 +87,10 @@ body {
 
 .hero-sec .visual-controls .swiper-button-prev::after,
 .hero-sec .visual-controls .swiper-button-next::after {
-    font-size: 10px;
+    font-size: 44px;
     font-weight: 400;
+    transform: scale(0.45);
+    transform-origin: center;
 }
 
 .hero-sec .visual-controls .swiper-pagination {
