@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
 
     const visualSwiper = new Swiper(slider, {
         direction: "horizontal",
-        loop: false,
+        loop: true,
         initialSlide: 1,
         centeredSlides: true,
         centeredSlidesBounds: false,
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             visualSwiper.update();
-            visualSwiper.slideTo(1, 0, false);
+            visualSwiper.slideToLoop(1, 0, false);
             visualSwiper.update();
         });
     });
