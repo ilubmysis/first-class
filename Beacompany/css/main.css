@@ -136,6 +136,12 @@ a { color: inherit; text-decoration: none; }
 
 .hero-sec .swiper-wrapper { align-items: flex-start; }
 
+.hero-sec .swiper-slide-next,
+.hero-sec .swiper-slide-prev {
+    visibility: visible !important;
+    opacity: 0.5;
+}
+
 .hero-sec .project-slide {
     flex: 0 0 auto;
     width: min(54.375vw, 1044px);
