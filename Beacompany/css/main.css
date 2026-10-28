@@ -73,11 +73,11 @@ body {
     position: static;
     inset: auto;
     display: flex;
-    flex: 0 0 49px;
+    flex: 0 0 34px;
     align-items: center;
     justify-content: center;
-    width: 49px;
-    height: 49px;
+    width: 34px;
+    height: 34px;
     margin: 0;
     color: var(--text-inverse);
     background: var(--surface-inverse);
@@ -87,7 +87,7 @@ body {
 
 .hero-sec .visual-controls .swiper-button-prev::after,
 .hero-sec .visual-controls .swiper-button-next::after {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -138,9 +138,9 @@ body {
 
     .hero-sec .visual-controls .swiper-button-prev,
     .hero-sec .visual-controls .swiper-button-next {
-        flex-basis: 42px;
-        width: 42px;
-        height: 42px;
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
     }
 
     .hero-sec .visual-controls .swiper-pagination-bullet {
