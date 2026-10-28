@@ -2,13 +2,6 @@ window.addEventListener("load", () => {
     const slider = document.querySelector(".hero-sec .visual");
     if (!slider || typeof Swiper === "undefined") return;
 
-    const firstSlide = slider.querySelector(".project-slide");
-    if (!firstSlide) return;
-
-    // Shift the initial slide track right by one slide slot.
-    const slideGap = window.innerWidth <= 900 ? 12 : 20;
-    const oneSlideSlot = firstSlide.getBoundingClientRect().width + slideGap;
-
     const visualSwiper = new Swiper(slider, {
         direction: "horizontal",
         loop: true,
@@ -40,7 +33,8 @@ window.addEventListener("load", () => {
         if (!firstSlide) return;
 
         const offset = firstSlide.getBoundingClientRect().width + visualSwiper.params.spaceBetween;
-        visualSwiper.wrapperEl.style.transform = `translate3d(${offset}px, 0, 0)`;
+        visualSwiper.wrapperEl.style.position = "relative";
+        visualSwiper.wrapperEl.style.left = `${offset}px`;
     };
 
     shiftTrackRight();
