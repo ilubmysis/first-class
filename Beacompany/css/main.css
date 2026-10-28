@@ -68,8 +68,8 @@ body {
     transform: translateX(-50%);
 }
 
-.hero-sec .visual-controls .swiper-button-prev,
-.hero-sec .visual-controls .swiper-button-next {
+.hero-sec .visual-controls .visual-prev,
+.hero-sec .visual-controls .visual-next {
     position: static;
     inset: auto;
     display: flex;
@@ -86,16 +86,16 @@ body {
 }
 
 /* Swiper 기본 화살표 대신 img 폴더의 SVG 화살표 사용 */
-.hero-sec .visual-controls .swiper-button-prev::before,
-.hero-sec .visual-controls .swiper-button-prev::after,
-.hero-sec .visual-controls .swiper-button-next::before,
-.hero-sec .visual-controls .swiper-button-next::after {
+.hero-sec .visual-controls .visual-prev::before,
+.hero-sec .visual-controls .visual-prev::after,
+.hero-sec .visual-controls .visual-next::before,
+.hero-sec .visual-controls .visual-next::after {
     display: none !important;
     content: none !important;
 }
 
-.hero-sec .visual-controls .swiper-button-prev img,
-.hero-sec .visual-controls .swiper-button-next img {
+.hero-sec .visual-controls .visual-prev img,
+.hero-sec .visual-controls .visual-next img {
     display: block;
     flex: 0 0 24px;
     width: 24px !important;
@@ -152,8 +152,8 @@ body {
         gap: 16px;
     }
 
-    .hero-sec .visual-controls .swiper-button-prev,
-    .hero-sec .visual-controls .swiper-button-next {
+    .hero-sec .visual-controls .visual-prev,
+    .hero-sec .visual-controls .visual-next {
         flex-basis: 42px;
         width: 42px;
         height: 42px;
