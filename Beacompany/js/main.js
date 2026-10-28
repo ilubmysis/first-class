@@ -9,13 +9,12 @@ window.addEventListener("load", () => {
     const slideGap = window.innerWidth <= 900 ? 12 : 20;
     const oneSlideSlot = firstSlide.getBoundingClientRect().width + slideGap;
 
-    new Swiper(slider, {
+    const visualSwiper = new Swiper(slider, {
         direction: "horizontal",
         loop: true,
         initialSlide: 1,
         centeredSlides: true,
         slidesPerView: "auto",
-        slidesOffsetBefore: oneSlideSlot,
         watchSlidesProgress: true,
         spaceBetween: 20,
         speed: 650,
@@ -34,4 +33,16 @@ window.addEventListener("load", () => {
             901: { spaceBetween: 20 }
         }
     });
+
+    // Shift the whole slide track right without changing slide order or navigation.
+    const shiftTrackRight = () => {
+        const firstSlide = slider.querySelector(".project-slide");
+        if (!firstSlide) return;
+
+        const offset = firstSlide.getBoundingClientRect().width + visualSwiper.params.spaceBetween;
+        visualSwiper.wrapperEl.style.transform = `translate3d(${offset}px, 0, 0)`;
+    };
+
+    shiftTrackRight();
+    window.addEventListener("resize", shiftTrackRight);
 });
