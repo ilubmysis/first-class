@@ -1,42 +1,89 @@
 window.addEventListener("load", () => {
-    const slider = document.querySelector(".hero-sec .visual");
-    if (!slider || typeof Swiper === "undefined") return;
+    const viewport = document.querySelector(".visual");
+    const track = document.querySelector(".visual-track");
+    const previousButton = document.querySelector(".visual-prev");
+    const nextButton = document.querySelector(".visual-next");
+    const pagination = [...document.querySelectorAll(".visual-pagination button")];
 
-    const visualSwiper = new Swiper(slider, {
-        direction: "horizontal",
-        loop: true,
-        initialSlide: 1,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        watchSlidesProgress: true,
-        spaceBetween: 20,
-        speed: 650,
-        preloadImages: true,
-        updateOnImagesReady: true,
-        navigation: {
-            nextEl: ".visual-next",
-            prevEl: ".visual-prev"
-        },
-        pagination: {
-            el: ".visual-controls .swiper-pagination",
-            clickable: true
-        },
-        breakpoints: {
-            0: { spaceBetween: 12 },
-            901: { spaceBetween: 20 }
+    if (!viewport || !track || !previousButton || !nextButton) return;
+
+    const originalSlides = [...track.querySelectorAll(".project-slide")];
+    if (originalSlides.length < 2) return;
+
+    // Clones at both ends allow the track to loop without Swiper.
+    track.prepend(originalSlides[originalSlides.length - 1].cloneNode(true));
+    track.append(originalSlides[0].cloneNode(true));
+
+    const slides = [...track.querySelectorAll(".project-slide")];
+    let currentIndex = 1; // Start on the second original project.
+    let resizeTimer;
+
+    function getGap() {
+        return parseFloat(getComputedStyle(track).gap) || 0;
+    }
+
+    function setPosition(animate = true) {
+        const activeSlide = slides[currentIndex];
+        if (!activeSlide) return;
+
+        track.style.transition = animate ? "transform 650ms ease" : "none";
+        const slideWidth = activeSlide.getBoundingClientRect().width;
+        const step = slideWidth + getGap();
+        const offset = (viewport.clientWidth - slideWidth) / 2 - currentIndex * step;
+        track.style.transform = `translate3d(${offset}px, 0, 0)`;
+
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("is-active", index === currentIndex);
+        });
+
+        const originalIndex = (currentIndex - 1 + originalSlides.length) % originalSlides.length;
+        pagination.forEach((button, index) => {
+            button.classList.toggle("is-active", index === originalIndex);
+            button.setAttribute("aria-current", index === originalIndex ? "true" : "false");
+        });
+    }
+
+    function move(direction) {
+        currentIndex += direction;
+        setPosition(true);
+    }
+
+    previousButton.addEventListener("click", () => move(-1));
+    nextButton.addEventListener("click", () => move(1));
+
+    pagination.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            currentIndex = index + 1;
+            setPosition(true);
+        });
+    });
+
+    track.addEventListener("transitionend", (event) => {
+        if (event.propertyName !== "transform") return;
+
+        if (currentIndex === 0) {
+            currentIndex = originalSlides.length;
+            setPosition(false);
+        } else if (currentIndex === originalSlides.length + 1) {
+            currentIndex = 1;
+            setPosition(false);
         }
     });
 
-    // Shift the whole slide track right without changing slide order or navigation.
-    const shiftTrackRight = () => {
-        const firstSlide = slider.querySelector(".project-slide");
-        if (!firstSlide) return;
+    window.addEventListener("resize", () => {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(() => setPosition(false), 100);
+    });
 
-        const offset = firstSlide.getBoundingClientRect().width + visualSwiper.params.spaceBetween;
-        visualSwiper.wrapperEl.style.position = "relative";
-        visualSwiper.wrapperEl.style.left = `${offset}px`;
-    };
+    // Wait for images to load so slide widths are measured correctly.
+    Promise.all(originalSlides.map((slide) => {
+        const image = slide.querySelector("img");
+        if (!image || image.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+            image.addEventListener("load", resolve, { once: true });
+            image.addEventListener("error", resolve, { once: true });
+        });
+    })).then(() => setPosition(false));
 
-    shiftTrackRight();
-    window.addEventListener("resize", shiftTrackRight);
+    setPosition(false);
 });
