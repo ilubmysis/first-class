@@ -1,11 +1,49 @@
-body {
-    background-color: #FFD400;
-    font-family: "Pretendard Variable", sans-serif;
+:root {
+    /* 01. Primitives — Figma 원본 컬러 */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-dark-gray: #1F1F1F;
+    --color-off-white: #FAFAFA;
+    --color-light-gray: #F0F0F0;
+    --color-gray: #666666;
+    --color-border-gray: #E5E5E5;
+    --color-beige: #C9B093;
+    --color-yellow: #FFEB3B;
+
+    /* 02. Semantic — UI 용도별 컬러 */
+    --background-primary: var(--color-white);
+    --background-secondary: var(--color-off-white);
+    --surface-default: var(--color-white);
+    --surface-subtle: var(--color-light-gray);
+    --surface-inverse: var(--color-dark-gray);
+    --text-primary: #0A0A0A;
+    --text-secondary: var(--color-gray);
+    --text-inverse: var(--color-white);
+    --border-default: var(--color-border-gray);
+    --border-strong: var(--color-gray);
+    --action-primary: var(--color-black);
+    --action-primary-hover: var(--color-yellow);
+    --action-primary-text: var(--color-white);
+    --action-primary-hover-text: var(--color-black);
+    --action-secondary: var(--color-dark-gray);
+    --action-secondary-hover: var(--color-yellow);
+    --action-secondary-text: var(--color-white);
+    --action-secondary-hover-text: var(--color-black);
+    --action-disabled: var(--color-light-gray);
+    --action-disabled-text: var(--color-gray);
+    --accent-primary: var(--color-yellow);
+    --accent-secondary: var(--color-beige);
+
+    /* Typography */
+    --font-primary: "Futura PT", sans-serif;
 }
 
-.mo {
-    display: none;
+body {
+    background-color: var(--background-primary);
+    font-family: var(--font-primary);
 }
+
+.mo { display: none; }
 
 .hero-sec .swiper {
     width: 100%;
@@ -41,9 +79,9 @@ body {
     width: 49px;
     height: 49px;
     margin: 0;
-    color: #fff;
-    background: #0A0A0A;
-    border: 1px solid #666;
+    color: var(--text-inverse);
+    background: var(--surface-inverse);
+    border: 1px solid var(--border-strong);
     border-radius: 50%;
 }
 
@@ -65,7 +103,7 @@ body {
     width: 13px;
     height: 13px;
     margin: 0 6px;
-    background: #666;
+    background: var(--color-gray);
     border-radius: 16px;
     opacity: 1;
     transition: width 0.25s ease, background-color 0.25s ease;
@@ -73,7 +111,7 @@ body {
 
 .hero-sec .visual-controls .swiper-pagination-bullet-active {
     width: 30px;
-    background: #fff;
+    background: var(--color-white);
 }
 
 .hero-sec .swiper-scrollbar {
@@ -86,23 +124,13 @@ body {
     background: rgba(255, 255, 255, 0.25);
 }
 
-.hero-sec .swiper-scrollbar-drag {
-    background: #fff;
-}
+.hero-sec .swiper-scrollbar-drag { background: var(--color-white); }
 
 @media (max-width: 1024px) {
-    .pc {
-        display: none;
-    }
+    .pc { display: none; }
+    .mo { display: block; }
 
-    .mo {
-        display: block;
-    }
-
-    .hero-sec .swiper {
-        height: 95dvh;
-    }
-
+    .hero-sec .swiper { height: 95dvh; }
     .hero-sec .visual-controls {
         bottom: 24px;
         gap: 16px;
@@ -121,9 +149,7 @@ body {
         margin: 0 4px;
     }
 
-    .hero-sec .visual-controls .swiper-pagination-bullet-active {
-        width: 22px;
-    }
+    .hero-sec .visual-controls .swiper-pagination-bullet-active { width: 22px; }
 
     .hero-sec .swiper-scrollbar {
         right: 6%;
