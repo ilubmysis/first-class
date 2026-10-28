@@ -1,68 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BE:A COMPANY Redux</title>
+    <title>BE:A COMPANY</title>
     <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
     <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="../npm/swiper/swiper-bundle.min.js"></script>
+    <script src="../npm/swiper/swiper-bundle.min.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <div id="wrap">
-        <header>제목공간</header>
+        <header class="site-header">
+            <div class="header-inner">
+                <a class="brand-mark" href="#" aria-label="BE:A Company home">BE<span>:</span>A</a>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <div class="nav-about">
+                        <a href="#about">ABOUT <span class="nav-caret" aria-hidden="true"></span></a>
+                        <div class="about-menu">
+                            <a href="#philosophy">PHILOSOPHY</a>
+                            <a href="#services">SERVICES</a>
+                            <a href="#partners">PARTNERS</a>
+                        </div>
+                    </div>
+                    <a href="#project">PROJECT</a>
+                </nav>
+                <a class="contact-link" href="#contact">CONTACT <span aria-hidden="true">→</span></a>
+            </div>
+        </header>
+
         <main>
-            <div class="hero-sec">
+            <section class="hero-sec" aria-label="Featured projects">
                 <div class="swiper visual">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="../Beacompany/img/12_인스케이프양양호텔-scaled.jpg" class="pc">
-                            <img src="../Beacompany/img/인스케이프앙앙 _모바일.png" class="mo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../Beacompany/img/순천만.png" class="pc">
-                            <img src="../Beacompany/img/순천만 _모바일.png" class="mo">
-                        </div>
-                        <div class="swiper-slide">
-                        </div>
+                        <article class="swiper-slide project-slide">
+                            <img class="project-image" src="img/12_인스케이프양양호텔-scaled.jpg" alt="Inscape Yangyang Hotel project">
+                            <div class="project-caption">
+                                <div>
+                                    <h1>INSCAPE YANGYANG HOTEL BY PARNAS</h1>
+                                    <p>ART DIRECTING / FIDES DEVELOPMENT <span>|</span> 2022</p>
+                                </div>
+                                <a href="#project">View More</a>
+                            </div>
+                        </article>
+                        <article class="swiper-slide project-slide">
+                            <img class="project-image" src="img/순천만.png" alt="Suncheon project">
+                            <div class="project-caption">
+                                <div>
+                                    <h2>SUNCHEON NAMMUNTEO SQUARE</h2>
+                                    <p>PUBLIC SPACE DESIGN - SUNCHEON-SI <span>|</span> 2025</p>
+                                </div>
+                                <a href="#project">View More</a>
+                            </div>
+                        </article>
                     </div>
 
-                    <div class="visual-controls">
-                        <div class="visual-prev">
-                            <img src="../Beacompany/img/arrow-right.svg" alt="">
-                        </div>
+                    <div class="visual-controls" aria-label="Project slider controls">
+                        <button class="visual-prev" type="button" aria-label="Previous project">
+                            <img src="img/arrow-left.svg" alt="">
+                        </button>
                         <div class="swiper-pagination"></div>
-                        <div class="visual-next">
-                            <img src="../Beacompany/img/arrow-left.svg" alt="">
-                        </div>
+                        <button class="visual-next" type="button" aria-label="Next project">
+                            <img src="img/arrow-right.svg" alt="">
+                        </button>
                     </div>
-
-                    <div class="swiper-scrollbar"></div>
                 </div>
-            </div>
+            </section>
         </main>
-        <footer>&copy;</footer>
     </div>
-
-    <script>
-        const swiper = new Swiper('.hero-sec > .swiper', {
-            direction: 'horizontal',
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.visual-next',
-                prevEl: '.visual-prev',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                draggable: true,
-            },
-        });
-    </script>
 </body>
 </html>
