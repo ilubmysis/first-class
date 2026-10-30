@@ -360,3 +360,157 @@
  .footer-address,.privacy-link,.footer-contact,.copyright { grid-column:1; grid-row:auto; }
  .footer-contact { gap:6px; font-size:11px; }
 }
+
+/* Bottom sections matched to the supplied Figma screenshot */
+.partners-sec {
+    min-height: 438px;
+    box-sizing: border-box;
+    padding: 46px 5.4% 40px;
+    background: #0a0a0a;
+    color: #fff;
+}
+.partners-inner { width: 100%; max-width: none; margin: 0; }
+.partners-title {
+    margin: 0 0 4px;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+.partners-description {
+    margin: 0;
+    color: #d0d0d0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+.contact-sec {
+    min-height: 394px;
+    box-sizing: border-box;
+    padding: 68px 5.6% 58px;
+    background: #fff;
+    color: #050505;
+}
+.contact-inner {
+    width: 100%;
+    max-width: none;
+    min-height: 268px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8%;
+    align-items: end;
+}
+.contact-prompt { align-self: end; }
+.contact-prompt h2 {
+    margin: 0;
+    font-size: clamp(44px, 5.4vw, 48px);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    font-weight: 800;
+}
+.contact-options { width: 100%; max-width: 322px; align-self: start; }
+.contact-options > p {
+    margin: 0 0 8px;
+    color: #777;
+    font-size: 10px;
+    line-height: 1.4;
+}
+.contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.contact-option {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px;
+    background: #fff;
+    color: #080808;
+    cursor: pointer;
+}
+.contact-option.is-selected { background: #f8e7a6; }
+.contact-option input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin: 0;
+    border: 1px solid #777;
+    border-radius: 50%;
+    background: #fff;
+}
+.contact-option input:checked {
+    border-color: #050505;
+    background: #050505;
+}
+.contact-option input:checked::after {
+    content: "✓";
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+}
+.contact-option span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+.contact-cta {
+    align-self: flex-start;
+    display: inline-block;
+    margin-top: 13px;
+    padding: 0;
+    border: 0;
+    color: #050505;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.site-footer {
+    box-sizing: border-box;
+    min-height: 66px;
+    padding: 12px 5.4%;
+    background: #0a0a0a;
+    color: #999;
+    border-top: 0;
+    font-size: 7px;
+}
+.footer-inner {
+    width: 100%;
+    max-width: none;
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+}
+.footer-logo { display: block; width: 40px; }
+.footer-logo img { display: block; width: 100%; height: auto; }
+.footer-company { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.footer-company p,.footer-legal p { margin: 0; line-height: 1.4; }
+.footer-company p:nth-child(2) { display: flex; flex-wrap: wrap; gap: 4px; }
+.footer-company a:hover,.footer-legal a:hover { color: #fff; }
+.footer-legal { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; text-align: right; white-space: nowrap; }
+.footer-legal > a { color: #aaa; }
+@media (max-width: 700px) {
+    .partners-sec { min-height: 300px; padding: 34px 24px; }
+    .partners-title { font-size: 26px; }
+    .contact-sec { min-height: auto; padding: 48px 24px; }
+    .contact-inner { min-height: 0; grid-template-columns: 1fr; gap: 34px; }
+    .contact-prompt h2 { font-size: clamp(48px, 12vw, 68px); }
+    .contact-options { max-width: none; }
+    .contact-option { min-height: 44px; }
+    .site-footer { padding: 18px 24px; }
+    .footer-inner { grid-template-columns: 42px minmax(0, 1fr); gap: 14px; }
+    .footer-logo { width: 36px; }
+    .footer-company { font-size: 8px; }
+    .footer-legal { grid-column: 2; align-items: flex-start; text-align: left; white-space: normal; gap: 7px; }
+}
