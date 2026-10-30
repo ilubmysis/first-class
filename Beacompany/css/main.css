@@ -53,10 +53,11 @@
 }
 .service-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 .service-card {
+    min-width: 0;
     min-height: 600px;
     display: flex;
     flex-direction: column;
@@ -80,7 +81,7 @@
 .service-copy { margin-top: 40px; }
 .service-copy h4 {
     margin: 0 0 38px;
-    font-size: 50px;
+    font-size: clamp(30px, 2.6vw, 50px);
     line-height: 1.1;
     font-weight: 500;
 }
@@ -112,7 +113,7 @@
 @media (max-width: 900px) {
     .intro-sec { padding: 80px 24px; }
     .intro-heading { margin-bottom: 58px; }
-    .service-cards { grid-template-columns: 1fr; }
+    .service-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .service-card { min-height: 440px; }
     .service-copy h4 { margin-bottom: 24px; }
 }
