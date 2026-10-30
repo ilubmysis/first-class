@@ -12,3 +12,120 @@
 .visual-pagination{display:flex;align-items:center;gap:6px}.visual-pagination button{width:6px;height:6px;padding:0;border:0;border-radius:8px;background:#666;transition:width 200ms ease,background 200ms ease}.visual-pagination button.is-active{width:18px;background:#fff}
 @media(max-width:900px){.site-header{height:76px}.header-inner{width:calc(100% - 32px)}.brand-mark,.brand-mark img{width:58px;height:41px}.brand-mark{flex-basis:58px}.main-nav{gap:22px;margin-left:32px;font-size:12px}.contact-link{min-width:104px;height:36px;padding:0 14px;font-size:11px}.hero-sec{height:min(760px,calc(100svh - 76px));min-height:560px}.visual-track{gap:12px}.project-slide{width:78vw;padding-top:22px}.project-image{height:52vw;max-height:430px;min-height:280px}.project-caption{gap:12px;margin-top:16px}.project-caption h2{font-size:clamp(16px,3.1vw,26px)}.project-caption p{font-size:clamp(9px,1.5vw,13px);letter-spacing:1px}.project-caption>a{font-size:15px}.visual-controls{bottom:35px}}
 @media(max-width:560px){.site-header{height:68px}.main-nav{gap:14px;margin-left:20px}.contact-link{min-width:88px;height:32px;padding:0 10px;font-size:10px}.hero-sec{height:calc(100svh - 68px);min-height:500px}.project-slide{width:84vw;padding-top:24px}.project-image{height:60vw;min-height:260px}.project-caption{align-items:flex-start;flex-direction:column;gap:10px}.project-caption h2{font-size:18px}.project-caption p{font-size:9px;letter-spacing:.5px}.project-caption>a{font-size:14px}.visual-controls{bottom:25px}}
+
+/* Content below the hero — kept separate from the existing hero styles */
+.intro-sec {
+    background: #fff;
+    color: #0a0a0a;
+    padding: 110px 20px 120px;
+}
+.content-inner {
+    width: min(1720px, 100%);
+    margin: 0 auto;
+}
+.intro-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 80px;
+}
+.intro-heading h2 {
+    margin: 0;
+    font-size: clamp(44px, 3.65vw, 70px);
+    line-height: 1.05;
+    letter-spacing: .01em;
+    font-weight: 800;
+}
+.intro-heading p {
+    margin: 0;
+    color: #666;
+    font-size: clamp(18px, 1.46vw, 28px);
+    line-height: 1.5;
+    letter-spacing: .01em;
+}
+.services-block > h3 {
+    margin: 0 0 44px;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: .15em;
+    font-weight: 800;
+}
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+.service-card {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 28px 36px 32px;
+    border: 1px solid #e5e5e5;
+    border-radius: 24px;
+    background: #fff;
+}
+.service-number {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.service-copy { margin-top: 40px; }
+.service-copy h4 {
+    margin: 0 0 38px;
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+.service-copy p {
+    margin: 0;
+    color: #666;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: .01em;
+}
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 42px;
+}
+.service-tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 29px;
+    padding: 5px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 99px;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+@media (max-width: 900px) {
+    .intro-sec { padding: 80px 24px; }
+    .intro-heading { margin-bottom: 58px; }
+    .service-cards { grid-template-columns: 1fr; }
+    .service-card { min-height: 440px; }
+    .service-copy h4 { margin-bottom: 24px; }
+}
+@media (max-width: 560px) {
+    .intro-sec { padding: 64px 18px 72px; }
+    .intro-heading h2 { font-size: 42px; }
+    .intro-heading p { font-size: 16px; }
+    .services-block > h3 { margin-bottom: 26px; font-size: 24px; }
+    .service-card { min-height: 400px; padding: 30px 22px; border-radius: 18px; }
+    .service-number { width: 56px; height: 56px; font-size: 17px; }
+    .service-copy { margin-top: 30px; }
+    .service-copy h4 { font-size: 40px; }
+    .service-copy p { font-size: 17px; }
+    .service-tags { padding-top: 32px; }
+    .service-tags span { font-size: 10px; }
+}
