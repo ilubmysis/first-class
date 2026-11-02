@@ -1,0 +1,114 @@
+/* Neo Brutalism: 굵은 테두리, 강한 대비, 단단한 그림자 */
+#wrap.neo-brutalism {
+    --nb-ink: #171717;
+    --nb-paper: #fff8e8;
+    --nb-yellow: #ffe14a;
+    --nb-red: #e63220;
+    --nb-shadow: 5px 5px 0 var(--nb-ink);
+    background: var(--nb-paper);
+    color: var(--nb-ink);
+    border: 3px solid var(--nb-ink);
+    box-sizing: border-box;
+}
+
+.neo-brutalism header {
+    border-bottom: 3px solid var(--nb-ink);
+    background: var(--nb-yellow);
+}
+
+.neo-brutalism h1,
+.neo-brutalism .title {
+    color: var(--nb-ink);
+    font-weight: 800;
+}
+
+.neo-brutalism .title {
+    padding: 18px;
+    border: 3px solid var(--nb-ink);
+    background: #fff;
+    box-shadow: var(--nb-shadow);
+}
+
+.neo-brutalism input[type="email"],
+.neo-brutalism input[type="password"] {
+    box-sizing: border-box;
+    border: 3px solid var(--nb-ink);
+    border-radius: 0;
+    background: #fff;
+    color: var(--nb-ink);
+    box-shadow: 3px 3px 0 var(--nb-ink);
+}
+
+.neo-brutalism input::placeholder {
+    color: #777;
+}
+
+.neo-brutalism .login_option {
+    font-weight: 700;
+}
+
+.neo-brutalism .login_bttn {
+    margin-top: 22px;
+    border: 3px solid var(--nb-ink);
+    border-radius: 0;
+    background: var(--nb-red);
+    color: #fff;
+    font-weight: 800;
+    opacity: 1;
+    box-shadow: var(--nb-shadow);
+    cursor: pointer;
+}
+
+.neo-brutalism .login_link a {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.neo-brutalism .sns_login > p {
+    color: var(--nb-ink);
+    font-weight: 800;
+}
+
+.neo-brutalism .sns_login > p::before,
+.neo-brutalism .sns_login > p::after {
+    height: 3px;
+    background: var(--nb-ink);
+    opacity: 1;
+}
+
+.neo-brutalism .sns_list > a {
+    border: 3px solid var(--nb-ink);
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 3px 3px 0 var(--nb-ink);
+}
+
+.neo-brutalism .prev_bttn,
+.neo-brutalism .pw_bttn {
+    border: 2px solid var(--nb-ink);
+    border-radius: 0;
+    background-color: var(--nb-yellow);
+    cursor: pointer;
+}
+
+.neo-brutalism .login_bttn:active,
+.neo-brutalism .sns_list > a:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-ink);
+}
+
+@media (max-width: 480px) {
+    #wrap.neo-brutalism {
+        min-width: 0;
+        border-width: 2px;
+    }
+
+    .neo-brutalism main {
+        padding: 32px 16px 56px;
+    }
+
+    .neo-brutalism .title {
+        padding: 14px;
+    }
+}
