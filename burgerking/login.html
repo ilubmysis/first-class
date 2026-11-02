@@ -263,9 +263,20 @@
         }
     </style>
     <link rel="stylesheet" href="../css/neo-brutalism.css">
+    <link rel="stylesheet" href="../css/glassmorphism.css">
+    <link rel="stylesheet" href="../css/grainy-gradient.css">
+    <link rel="stylesheet" href="../css/isometric.css">
 </head>
 <body>
-    <div id="wrap" class="neo-brutalism">
+    <div id="wrap" class="glassmorphism">
+        <div class="theme_picker">
+            <label for="theme-select">테마</label>
+            <select id="theme-select" aria-label="디자인 테마 선택">
+                <option value="glassmorphism">Glassmorphism</option>
+                <option value="grainy-gradient">Grainy Gradient</option>
+                <option value="isometric">Isometric</option>
+            </select>
+        </div>
         <header>
             <h1>로그인</h1>
             <button class="prev_bttn">
@@ -319,5 +330,15 @@
             </div>
         </main>
     </div>
+<script>
+        const themeSelect = document.querySelector("#theme-select");
+        const wrap = document.querySelector("#wrap");
+        const themeClasses = ["glassmorphism", "grainy-gradient", "isometric"];
+
+        themeSelect.addEventListener("change", function () {
+            wrap.classList.remove(...themeClasses);
+            wrap.classList.add(this.value);
+        });
+    </script>
 </body>
 </html>
