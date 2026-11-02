@@ -1,0 +1,60 @@
+/* Glassmorphism theme */
+#wrap.glassmorphism {
+    color: #24304a;
+    background: linear-gradient(135deg, #dce8ff, #f4e5ff 55%, #d9f5f2);
+    padding: 14px;
+    box-sizing: border-box;
+}
+.glassmorphism .theme_picker {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 4px 16px;
+    color: #24304a;
+}
+.glassmorphism .theme_picker select {
+    max-width: 100%;
+    padding: 9px 12px;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 12px;
+    color: #24304a;
+    background: rgba(255,255,255,.55);
+    backdrop-filter: blur(14px);
+}
+.glassmorphism header,
+.glassmorphism .title,
+.glassmorphism fieldset,
+.glassmorphism .sns_list > a {
+    background: rgba(255,255,255,.38);
+    border: 1px solid rgba(255,255,255,.75);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 32px rgba(67,75,130,.12);
+}
+.glassmorphism header { border-radius: 16px 16px 0 0; }
+.glassmorphism .title { padding: 20px; border-radius: 20px; }
+.glassmorphism input[type="email"],
+.glassmorphism input[type="password"] {
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 14px;
+    background: rgba(255,255,255,.62);
+    color: #24304a;
+}
+.glassmorphism .login_bttn {
+    opacity: 1;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 14px;
+    background: linear-gradient(120deg,#637de8,#a77be8);
+    color: white;
+    box-shadow: 0 8px 20px rgba(90,92,190,.24);
+}
+.glassmorphism .sns_login > p { color: #394565; }
+.glassmorphism .sns_login > p::before,
+.glassmorphism .sns_login > p::after { background: #7f8cae; opacity: .5; }
+.glassmorphism .sns_list > a { border-radius: 14px; }
+.glassmorphism .prev_bttn,
+.glassmorphism .pw_bttn { border-radius: 10px; background-color: rgba(255,255,255,.55); }
+@media (max-width:480px) {
+    #wrap.glassmorphism { min-width: 0; padding: 10px; }
+}
