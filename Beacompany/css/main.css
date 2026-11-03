@@ -713,3 +713,14 @@
     .contact-option { min-height: 56px; padding: 0 18px; }
     .contact-option span { font-size: 13px; }
 }
+
+
+/* Keep Partners and Contact slightly shorter than the Signature Work section */
+.partners-sec,
+.contact-sec {
+    min-height: 82svh;
+}
+@media (max-width: 700px) {
+    .partners-sec { min-height: 74svh; }
+    .contact-sec { min-height: 78svh; }
+}
