@@ -655,3 +655,61 @@
     .contact-options { max-width: none; }
     .contact-option { min-height: 50px; }
 }
+
+
+/* Give Partners and Contact the same full-section presence as the main content */
+.partners-sec {
+    min-height: 100svh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    padding: 110px 20px 120px;
+}
+.partners-inner { width: min(1626px, 100%); margin: 0 auto; }
+.partners-title {
+    margin: 0 0 84px;
+    font-size: clamp(48px, 3.65vw, 70px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.035em;
+}
+.partners-description { font-size: 14px; line-height: 1.6; }
+.contact-sec {
+    min-height: 100svh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 110px 20px 120px;
+}
+.contact-inner {
+    width: min(1626px, 100%);
+    min-height: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8%;
+    align-items: end;
+}
+.contact-prompt h2 {
+    margin: 0;
+    font-size: clamp(48px, 3.65vw, 70px);
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    font-weight: 800;
+}
+.contact-options { width: 100%; max-width: 520px; justify-self: end; }
+.contact-option { min-height: 64px; padding: 0 24px; gap: 18px; }
+.contact-option span { font-size: 15px; letter-spacing: 1.8px; }
+.contact-option input { width: 22px; height: 22px; flex-basis: 22px; }
+.contact-option input:checked::after { line-height: 20px; }
+.contact-options > p { font-size: 13px; margin-bottom: 12px; }
+.contact-options .contact-fields .contact-cta { margin-top: 16px; font-size: 11px; }
+@media (max-width: 700px) {
+    .partners-sec { min-height: 80svh; padding: 64px 24px 72px; }
+    .partners-title { margin-bottom: 48px; font-size: clamp(42px, 9vw, 56px); }
+    .contact-sec { min-height: 85svh; padding: 64px 24px 72px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 42px; }
+    .contact-options { max-width: none; justify-self: stretch; }
+    .contact-option { min-height: 56px; padding: 0 18px; }
+    .contact-option span { font-size: 13px; }
+}
