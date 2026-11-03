@@ -724,3 +724,59 @@
     .partners-sec { min-height: 74svh; }
     .contact-sec { min-height: 78svh; }
 }
+
+
+/* Increase Contact headline, field choices and footer readability */
+.contact-prompt h2 {
+    font-size: clamp(76px, 8vw, 115px);
+    line-height: .94;
+    letter-spacing: -.045em;
+}
+.contact-option {
+    min-height: 74px;
+    padding: 0 28px;
+    gap: 20px;
+}
+.contact-option span {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+.contact-option input {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+}
+.contact-option input:checked::after {
+    line-height: 22px;
+}
+.site-footer {
+    min-height: 82px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 10px;
+}
+.footer-company,
+.footer-legal {
+    font-size: 10px;
+}
+@media (max-width: 700px) {
+    .contact-prompt h2 {
+        font-size: clamp(64px, 14vw, 88px);
+    }
+    .contact-option {
+        min-height: 62px;
+        padding: 0 20px;
+    }
+    .contact-option span {
+        font-size: 15px;
+    }
+    .site-footer {
+        min-height: 0;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .footer-company,
+    .footer-legal {
+        font-size: 10px;
+    }
+}
