@@ -514,3 +514,89 @@
     .footer-company { font-size: 8px; }
     .footer-legal { grid-column: 2; align-items: flex-start; text-align: left; white-space: normal; gap: 7px; }
 }
+
+
+/* Match lower section headings to the main section typography and alignment */
+.partners-sec {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.partners-inner {
+    width: min(1626px, 100%);
+    margin: 0 auto;
+}
+.partners-title {
+    font-size: clamp(48px, 3.65vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -.035em;
+    margin: 0 0 12px;
+}
+.partners-description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+.contact-sec {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.contact-inner {
+    width: min(1626px, 100%);
+    margin: 0 auto;
+}
+.contact-prompt h2 {
+    font-size: clamp(48px, 3.65vw, 70px);
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    font-weight: 800;
+}
+@media (max-width: 700px) {
+    .partners-sec, .contact-sec { padding-left: 24px; padding-right: 24px; }
+    .partners-title, .contact-prompt h2 { font-size: clamp(42px, 9vw, 56px); }
+}
+
+/* Restore the ABOUT dropdown navigation */
+.main-nav { align-items: center; }
+.nav-about { position: relative; display: flex; align-items: center; height: 100%; }
+.nav-about > a { display: inline-flex; align-items: center; gap: 7px; }
+.nav-caret {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+}
+.about-menu {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% + 1px);
+    left: -14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 150px;
+    padding: 8px 0;
+    background: #0a0a0a;
+    border: 1px solid #383838;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+.nav-about:hover .about-menu,
+.nav-about:focus-within .about-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.about-menu a {
+    display: block;
+    padding: 10px 14px;
+    white-space: nowrap;
+}
+.about-menu a:hover,
+.about-menu a:focus-visible { background: #252525; }
+@media (max-width: 700px) {
+    .about-menu { left: 0; }
+}
