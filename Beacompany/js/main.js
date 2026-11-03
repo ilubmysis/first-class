@@ -8,21 +8,25 @@ window.addEventListener("load", () => {
     if (!viewport || !track || !prev || !next) return;
 
     const originals = [...track.querySelectorAll(".project-slide")];
-    if (originals.length < 2 || dots.length !== originals.length) return;
+    const count = originals.length;
 
-    // 양 끝에 복제 슬라이드를 두어 무한 루프처럼 연결합니다.
-    track.prepend(originals[originals.length - 1].cloneNode(true));
-    track.append(originals[0].cloneNode(true));
+    if (count < 2 || dots.length !== count) return;
 
-    const slides = [...track.querySelectorAll(".project-slide")];
-    const firstOriginalIndex = 1;
-    const lastOriginalIndex = originals.length;
-    let index = firstOriginalIndex;
+    // 원본 3세트를 만들어 가운데 세트에서 시작합니다.
+    // 양옆에 같은 순서의 슬라이드가 충분히 있어 끝에서 빈 공간이 생기지 않습니다.
+    const makeSet = () => originals.map((slide) => slide.cloneNode(true));
+    const slides = [...makeSet(), ...makeSet(), ...makeSet()];
+
+    track.replaceChildren(...slides);
+
+    const middleStart = count;
+    const middleEnd = count * 2 - 1;
+    let index = middleStart;
     let animating = false;
     let resizeTimer;
 
     function updatePagination() {
-        const dotIndex = (index - firstOriginalIndex + originals.length) % originals.length;
+        const dotIndex = ((index % count) + count) % count;
 
         dots.forEach((dot, i) => {
             const active = i === dotIndex;
@@ -35,7 +39,6 @@ window.addEventListener("load", () => {
         const activeSlide = slides[index];
         if (!activeSlide) return;
 
-        // 실제 슬라이드 좌표를 기준으로 중앙 정렬합니다.
         const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
         const offset = viewport.clientWidth / 2 - slideCenter;
 
@@ -51,6 +54,7 @@ window.addEventListener("load", () => {
 
     function move(direction) {
         if (animating) return;
+
         animating = true;
         index += direction;
         position(true);
@@ -62,8 +66,16 @@ window.addEventListener("load", () => {
     dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
             if (animating) return;
+
             animating = true;
-            index = i + firstOriginalIndex;
+            const current = ((index % count) + count) % count;
+            let distance = i - current;
+
+            // 페이지네이션은 가장 가까운 방향으로 이동합니다.
+            if (distance > count / 2) distance -= count;
+            if (distance < -count / 2) distance += count;
+
+            index += distance;
             position(true);
         });
     });
@@ -71,19 +83,18 @@ window.addEventListener("load", () => {
     track.addEventListener("transitionend", (event) => {
         if (event.propertyName !== "transform") return;
 
-        // 복제 슬라이드에 도착하면 대응하는 원본 위치로 되돌립니다.
-        if (index === 0) {
-            index = lastOriginalIndex;
-        } else if (index === lastOriginalIndex + 1) {
-            index = firstOriginalIndex;
-        } else {
-            animating = false;
-            return;
+        // 가운데 세트를 벗어나면 같은 프로젝트가 보이는 가운데 세트 위치로 즉시 재정렬합니다.
+        // 화면에 보이는 슬라이드 순서는 같으므로 사용자는 점프를 알아차리지 못합니다.
+        if (index > middleEnd) {
+            index -= count;
+            position(false);
+            track.getBoundingClientRect();
+        } else if (index < middleStart) {
+            index += count;
+            position(false);
+            track.getBoundingClientRect();
         }
 
-        position(false);
-        // 순간 이동을 먼저 반영해 복귀 과정에서 깜빡이는 현상을 방지합니다.
-        track.getBoundingClientRect();
         animating = false;
     });
 
@@ -97,9 +108,9 @@ window.addEventListener("load", () => {
 
     position(false);
 
-    // 이미지 로딩이 끝난 뒤 실제 레이아웃 기준으로 위치를 다시 맞춥니다.
     const imagePromises = [...track.querySelectorAll(".project-image")].map((img) => {
         if (img.complete) return Promise.resolve();
+
         return new Promise((resolve) => {
             img.addEventListener("load", resolve, { once: true });
             img.addEventListener("error", resolve, { once: true });
