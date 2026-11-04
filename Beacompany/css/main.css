@@ -667,13 +667,13 @@
 }
 .partners-inner { width: min(1626px, 100%); margin: 0 auto; }
 .partners-title {
-    margin: 0 0 84px;
+    margin: 0 0 24px;
     font-size: clamp(48px, 3.65vw, 70px);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -.035em;
 }
-.partners-description { font-size: 14px; line-height: 1.6; }
+.partners-description { font-size: 16px; line-height: 1.6; }
 .contact-sec {
     min-height: 100svh;
     box-sizing: border-box;
@@ -706,7 +706,8 @@
 .contact-options .contact-fields .contact-cta { margin-top: 16px; font-size: 11px; }
 @media (max-width: 700px) {
     .partners-sec { min-height: 80svh; padding: 64px 24px 72px; }
-    .partners-title { margin-bottom: 48px; font-size: clamp(42px, 9vw, 56px); }
+    .partners-title { margin-bottom: 20px; font-size: clamp(42px, 9vw, 56px); }
+    .partners-description { font-size: 16px; }
     .contact-sec { min-height: 85svh; padding: 64px 24px 72px; }
     .contact-inner { grid-template-columns: 1fr; gap: 42px; }
     .contact-options { max-width: none; justify-self: stretch; }
