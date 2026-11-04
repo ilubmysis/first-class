@@ -809,3 +809,32 @@
     }
     .footer-logo { width: 42px; }
 }
+
+
+/* CONTACT typography: keep body copy at 16px or larger */
+.contact-options > p {
+    font-size: 16px;
+}
+.contact-option span {
+    font-size: 16px;
+}
+.contact-fields .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+/* The CTA already contains a text arrow in index.html; prevent the generic link arrow from duplicating it. */
+.contact-fields .contact-cta::after {
+    content: none;
+}
+@media (max-width: 700px) {
+    .contact-options > p,
+    .contact-option span {
+        font-size: 16px;
+    }
+    .contact-fields .contact-cta {
+        font-size: 18px;
+    }
+}
