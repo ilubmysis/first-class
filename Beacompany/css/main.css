@@ -839,3 +839,53 @@
         font-size: 18px;
     }
 }
+
+
+/* Partners logo marquee */
+.partners-marquee {
+    width: 100%;
+    margin-top: 64px;
+    overflow: hidden;
+}
+.partners-track {
+    display: flex;
+    width: max-content;
+    animation: partners-scroll 24s linear infinite;
+    will-change: transform;
+}
+.partners-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    gap: clamp(72px, 10vw, 180px);
+    min-width: min(100vw - 40px, 1626px);
+    padding: 0 clamp(36px, 5vw, 90px);
+}
+.partners-group img {
+    display: block;
+    width: auto;
+    max-width: 220px;
+    height: 64px;
+    object-fit: contain;
+}
+@keyframes partners-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+@media (max-width: 700px) {
+    .partners-marquee { margin-top: 48px; }
+    .partners-group {
+        gap: 56px;
+        min-width: 100vw;
+        padding: 0 28px;
+    }
+    .partners-group img {
+        max-width: 150px;
+        height: 48px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .partners-track { animation: none; }
+    .partners-marquee { overflow-x: auto; }
+}
