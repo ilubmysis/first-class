@@ -819,7 +819,7 @@
 .contact-option span {
     font-size: 16px;
 }
-.contact-fields .contact-cta {
+.contact-options .contact-fields .contact-cta {
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -835,7 +835,7 @@
     .contact-option span {
         font-size: 16px;
     }
-    .contact-fields .contact-cta {
+    .contact-options .contact-fields .contact-cta {
         font-size: 18px;
     }
 }
