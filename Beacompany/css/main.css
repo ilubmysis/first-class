@@ -889,3 +889,14 @@
     .partners-track { animation: none; }
     .partners-marquee { overflow-x: auto; }
 }
+
+
+/* Enlarge Suncheon city partner logo independently */
+.partners-group img.partner-logo-suncheon {
+    height: 88px;
+}
+@media (max-width: 700px) {
+    .partners-group img.partner-logo-suncheon {
+        height: 66px;
+    }
+}
