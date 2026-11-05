@@ -890,3 +890,57 @@
     .partners-marquee { overflow-x: auto; }
 }
 
+
+
+/* Partners: six temporary image buttons */
+.partners-sec {
+    min-height: 0;
+    padding: 46px 5.4% 26px;
+    background: #fff;
+    color: #0a0a0a;
+}
+.partners-inner {
+    width: 100%;
+    max-width: 1626px;
+    margin: 0 auto;
+}
+.partners-title {
+    margin: 0 0 36px;
+    color: #0a0a0a;
+    font-size: clamp(20px, 2.1vw, 26px);
+    line-height: 1.18;
+    font-weight: 600;
+    letter-spacing: -.025em;
+}
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 24px;
+}
+.partner-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 7px;
+    background: #e9e8e6;
+    cursor: default;
+}
+.partner-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .partners-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+}
+@media (max-width: 560px) {
+    .partners-sec { padding: 36px 18px 28px; }
+    .partners-title { margin-bottom: 26px; font-size: 19px; }
+    .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
