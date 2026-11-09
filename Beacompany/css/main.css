@@ -957,3 +957,30 @@
     }
     .partner-card { width: 100%; }
 }
+
+
+/* Refine partner card size and center the six-card group */
+.partners-grid {
+    grid-template-columns: repeat(6, 160px);
+    justify-content: center;
+    gap: 24px;
+}
+.partner-card {
+    width: 160px;
+    aspect-ratio: 1 / 1;
+}
+@media (max-width: 900px) {
+    .partners-grid {
+        grid-template-columns: repeat(3, 160px);
+        justify-content: center;
+        gap: 20px;
+    }
+}
+@media (max-width: 560px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, minmax(0, 160px));
+        justify-content: center;
+        gap: 16px;
+    }
+    .partner-card { width: 100%; }
+}
