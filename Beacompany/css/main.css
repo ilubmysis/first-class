@@ -984,3 +984,15 @@
     }
     .partner-card { width: 100%; }
 }
+
+
+/* Vertically center the partner cards in the space below the heading */
+.partners-sec .partners-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(74svh - 136px);
+}
+.partners-sec .partners-grid {
+    margin-top: auto;
+    margin-bottom: auto;
+}
