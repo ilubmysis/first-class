@@ -1,6 +1,7 @@
 /* PROJECTS page — Signature Work 카드(main.css)를 재사용. main.css는 수정하지 않는다. */
 .projects-page { color: var(--color-black); background: #e5e5e5; font-family: var(--font-primary); }
 .projects-page .site-header { color: var(--color-white); }
+.projects-page .main-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--color-yellow); text-underline-offset: 6px; }
 .projects-container { width: min(1626px, calc(100% - 40px)); margin: 0 auto; }
 
 .projects-hero { padding: 48px 0 56px; background: var(--color-black); color: var(--color-white); }
