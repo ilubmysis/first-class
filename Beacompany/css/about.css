@@ -10,13 +10,13 @@
 .about-page .main-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--color-yellow); text-underline-offset: 6px; }
 
 /* 공통 라벨 / 제목 */
-.about-section-label { display: flex; gap: 26px; margin: 0 0 40px; color: #777; font-size: 12px; font-weight: 500; letter-spacing: 1.6px; }
+.about-section-label { display: flex; gap: 26px; margin: 0 0 40px; color: #777; font-size: 16px; font-weight: 500; letter-spacing: 1.6px; }
 .about-page h2 { margin: 0; font-size: clamp(44px, 3.65vw, 70px); line-height: 1.05; letter-spacing: .01em; font-weight: 800; }
 .about-page h2 span { color: var(--color-gray); }
 
 /* 01. HERO */
 .about-hero { padding: 48px 0 28px; background: var(--color-black); color: var(--color-white); }
-.about-eyebrow { margin: 0 0 18px; color: #aaa; font-size: 12px; font-weight: 500; letter-spacing: 1.6px; }
+.about-eyebrow { margin: 0 0 18px; color: #aaa; font-size: 16px; font-weight: 500; letter-spacing: 1.6px; }
 .about-hero h1 { margin: 0 0 48px; font-size: clamp(64px, 7.2vw, 140px); line-height: .9; font-weight: 800; letter-spacing: .01em; }
 .hero-panels { display: flex; gap: 12px; width: min(1626px, calc(100% - 40px)); height: clamp(360px, 29.167vw, 560px); margin: 0 auto; }
 .hero-panel { position: relative; flex: 1 1 0; min-width: 0; margin: 0; overflow: hidden; transition: flex 650ms ease, opacity 250ms ease; }
@@ -24,10 +24,10 @@
 .hero-panel::after { content: ""; position: absolute; inset: 50% 0 0; background: linear-gradient(transparent, rgba(10, 10, 10, .6)); pointer-events: none; }
 .hero-panel figcaption { z-index: 1; }
 .hero-panel figcaption { position: absolute; left: 24px; bottom: 22px; display: flex; gap: 14px; font-size: clamp(16px, 1.35vw, 26px); font-weight: 700; letter-spacing: 1px; }
-.hero-panel figcaption span { color: #aaa; font-weight: 500; font-size: .6em; padding-top: .3em; }
+.hero-panel figcaption span { color: #aaa; font-weight: 500; font-size: 16px; padding-top: .3em; }
 .hero-panels:hover .hero-panel { opacity: .5; }
 .hero-panels .hero-panel:hover { flex-grow: 1.8; opacity: 1; }
-.about-hero-foot { display: flex; justify-content: space-between; padding-top: 18px; color: #888; font-size: 10px; letter-spacing: 1.3px; }
+.about-hero-foot { display: flex; justify-content: space-between; padding-top: 18px; color: #888; font-size: 16px; letter-spacing: 1.3px; }
 
 /* 02. INTRO */
 .about-intro { padding: 110px 20px 120px; }
@@ -43,7 +43,7 @@
 .fields-list li { display: flex; flex-direction: column; gap: 12px; padding: 34px 24px 34px 0; border-bottom: 1px solid #d9d9d9; }
 .fields-list li + li { padding-left: 24px; border-left: 1px solid #d9d9d9; }
 .fields-list strong { font-size: clamp(26px, 2.6vw, 50px); line-height: 1.1; font-weight: 500; overflow-wrap: anywhere; }
-.fields-list span { color: #777; font-family: "Pretendard Variable", sans-serif; font-size: 14px; }
+.fields-list span { color: #777; font-family: "Pretendard Variable", sans-serif; font-size: 16px; }
 .fields-copy { margin: 28px 0 0; color: var(--color-gray); font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.7; word-break: keep-all; }
 
 /* 04. PHILOSOPHY */
@@ -53,7 +53,7 @@
 .philosophy-item:first-child { padding-left: 0; border-left: 0; }
 .philosophy-item strong { font-size: clamp(32px, 3.2vw, 62px); line-height: 1.05; font-weight: 800; letter-spacing: .01em; }
 .philosophy-item strong span { color: var(--color-gray); }
-.philosophy-item p { margin: 0; color: #aaa; font-family: "Pretendard Variable", sans-serif; font-size: 14px; letter-spacing: .5px; }
+.philosophy-item p { margin: 0; color: #aaa; font-family: "Pretendard Variable", sans-serif; font-size: 16px; letter-spacing: .5px; }
 
 /* 05. SERVICES */
 .about-expertise { padding: 110px 20px 120px; }
@@ -62,17 +62,17 @@
 .expertise-heading > p { max-width: 430px; margin: 0; color: var(--color-gray); font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.7; }
 .expertise-list { border-top: 1px solid #0a0a0a; }
 .expertise-item { position: relative; display: grid; grid-template-columns: 60px minmax(240px, 1fr) minmax(260px, 1fr) 300px; align-items: center; gap: 24px; min-height: 200px; padding: 28px 0; border-bottom: 1px solid #d9d9d9; transition: background 250ms ease; }
-.expertise-number { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--color-black); color: var(--color-white); font-size: 14px; letter-spacing: 1px; }
+.expertise-number { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--color-black); color: var(--color-white); font-size: 16px; letter-spacing: 1px; }
 .expertise-main h3 { margin: 0 0 14px; font-size: clamp(30px, 2.6vw, 50px); line-height: 1.1; font-weight: 500; }
 .expertise-main p { max-width: 380px; margin: 0; color: var(--color-gray); font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.6; word-break: keep-all; }
 .expertise-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.expertise-tags span { display: inline-flex; align-items: center; min-height: 29px; padding: 5px 12px; border: 1px solid #e5e5e5; border-radius: 99px; font-size: 12px; line-height: 1.2; white-space: nowrap; }
+.expertise-tags span { display: inline-flex; align-items: center; min-height: 29px; padding: 5px 12px; border: 1px solid #e5e5e5; border-radius: 99px; font-size: 16px; line-height: 1.2; white-space: nowrap; }
 .expertise-preview { position: relative; margin: 0; height: 150px; overflow: hidden; opacity: 0; transform: translateX(16px); transition: opacity 250ms ease, transform 650ms ease; }
 .expertise-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.expertise-preview figcaption { position: absolute; left: 12px; bottom: 10px; color: #fff; font-size: 10px; letter-spacing: 1.5px; }
+.expertise-preview figcaption { position: absolute; left: 12px; bottom: 10px; color: #fff; font-size: 16px; letter-spacing: 1.5px; }
 .expertise-item:hover .expertise-preview, .expertise-item:target .expertise-preview { opacity: 1; transform: none; }
 .expertise-item:target { background: #f5f5f5; }
-.mockup-note { margin: 14px 0 0; color: #999; font-family: "Pretendard Variable", sans-serif; font-size: 11px; }
+.mockup-note { margin: 14px 0 0; color: #999; font-family: "Pretendard Variable", sans-serif; font-size: 16px; }
 
 /* 06. CTA */
 .about-cta { padding: 110px 20px; border-top: 1px solid #e5e5e5; }
@@ -116,11 +116,11 @@
   .philosophy-item, .philosophy-item:first-child { min-height: 0; gap: 12px; padding: 0 0 32px; border-left: 0; border-bottom: 1px solid #333; }
   .expertise-heading { flex-direction: column; align-items: start; gap: 20px; margin-bottom: 40px; }
   .expertise-item { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; min-height: 0; padding: 24px 0; }
-  .expertise-number { width: 36px; height: 36px; font-size: 12px; align-self: start; }
+  .expertise-number { width: 36px; height: 36px; font-size: 16px; align-self: start; }
   .expertise-tags { grid-column: 2; }
   .expertise-main h3 { font-size: 34px; }
-  .expertise-main p { font-size: 14px; }
-  .expertise-tags span { font-size: 10px; }
+  .expertise-main p { font-size: 16px; }
+  .expertise-tags span { font-size: 16px; }
   .about-cta-inner { flex-direction: column; align-items: start; }
   .about-cta-links { align-items: flex-start; }
 }

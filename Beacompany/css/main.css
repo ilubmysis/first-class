@@ -1000,7 +1000,7 @@
 /* WHAT WE DO → ABOUT 연결 (CTA + 카드 링크) */
 .services-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 44px; }
 .services-block .services-head > h3 { margin: 0; font-size: 32px; line-height: 1.1; letter-spacing: .15em; font-weight: 800; }
-.section-cta { flex: 0 0 auto; font-size: 14px; font-weight: 500; letter-spacing: .08em; }
+.section-cta { flex: 0 0 auto; font-size: 16px; font-weight: 500; letter-spacing: .08em; }
 .section-cta span { display: inline-block; transition: transform 250ms ease; }
 .section-cta:hover span, .section-cta:focus-visible span { transform: translateX(6px); }
 .service-card { position: relative; transition: border-color 180ms ease; }
@@ -1009,6 +1009,5 @@
 @media (max-width: 560px) {
   .services-head { margin-bottom: 26px; }
   .services-block .services-head > h3 { font-size: 24px; }
-  .section-cta { font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .section-cta span, .service-card { transition: none; } }
