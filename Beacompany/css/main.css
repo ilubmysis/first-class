@@ -1007,7 +1007,8 @@
 .service-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .service-card:hover { border-color: #0a0a0a; }
 @media (max-width: 560px) {
-  .services-head { margin-bottom: 26px; }
+  .services-head { flex-wrap: wrap; row-gap: 10px; margin-bottom: 26px; }
+  .services-head > h3 { white-space: nowrap; }
   .services-head > h3 { font-size: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .section-cta span, .service-card { transition: none; } }
