@@ -1,0 +1,37 @@
+/* PROJECTS page — Signature Work 카드(main.css)를 재사용. main.css는 수정하지 않는다. */
+.projects-page { color: var(--color-black); background: #e5e5e5; font-family: var(--font-primary); }
+.projects-page .site-header { color: var(--color-white); }
+.projects-container { width: min(1626px, calc(100% - 40px)); margin: 0 auto; }
+
+.projects-hero { padding: 48px 0 56px; background: var(--color-black); color: var(--color-white); }
+.projects-eyebrow { margin: 0 0 18px; color: #aaa; font-size: 16px; font-weight: 500; letter-spacing: 1.6px; }
+.projects-hero-row { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+.projects-hero h1 { margin: 0; font-size: clamp(64px, 7.2vw, 140px); line-height: .9; font-weight: 800; letter-spacing: .01em; }
+.projects-count { margin: 0; color: #aaa; font-size: 16px; letter-spacing: 1.6px; }
+.projects-count strong { color: var(--color-white); font-size: clamp(24px, 1.875vw, 36px); font-weight: 700; margin-right: 6px; }
+
+.projects-list { padding: 100px 0 120px; }
+.projects-grid { row-gap: 80px; }
+.project-card .signature-caption p { font-size: clamp(16px, 1.04vw, 20px); }
+.project-card .signature-caption .project-client { margin-top: 4px; color: #888; }
+.project-placeholder { display: grid; place-items: center; background: #d0d0d0; color: #777; font-size: 16px; letter-spacing: 2px; }
+.project-card.is-hidden { display: none; }
+
+.projects-more { display: flex; align-items: center; justify-content: center; gap: 10px; width: 220px; height: 56px; margin: 90px auto 0; border: 1px solid var(--color-black); border-radius: 30px; background: transparent; color: var(--color-black); font: 500 16px/1 var(--font-primary); letter-spacing: .1em; cursor: pointer; transition: background 180ms ease, color 180ms ease; }
+.projects-more:hover, .projects-more:focus-visible { background: var(--color-black); color: var(--color-white); }
+.projects-more[hidden] { display: none; }
+
+@media (max-width: 900px) {
+  .projects-list { padding: 80px 0 90px; }
+  .projects-grid { row-gap: 56px; }
+}
+@media (max-width: 560px) {
+  .projects-container { width: calc(100% - 36px); }
+  .projects-hero { padding: 32px 0 40px; }
+  .projects-hero h1 { font-size: 56px; }
+  .projects-hero-row { flex-direction: column; gap: 14px; }
+  .projects-list { padding: 64px 0 72px; }
+  .project-card .signature-caption p { font-size: 16px; letter-spacing: 1px; }
+  .projects-more { margin-top: 56px; }
+}
+@media (prefers-reduced-motion: reduce) { .projects-more { transition: none; } }
