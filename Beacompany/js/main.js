@@ -119,3 +119,19 @@ window.addEventListener("load", () => {
 
     Promise.all(imagePromises).then(() => position(false));
 });
+// Contact: 선택한 분야를 메일 제목에 넣는다.
+document.addEventListener("DOMContentLoaded", () => {
+    const cta = document.querySelector(".contact-cta");
+    const options = document.querySelectorAll('input[name="contact-field"]');
+    if (!cta || !options.length) return;
+
+    const email = "ART@BEACOMPANY.co.kr";
+    const update = () => {
+        const checked = document.querySelector('input[name="contact-field"]:checked');
+        const field = checked ? checked.value.toUpperCase() : "";
+        const subject = field ? `[${field}] 프로젝트 문의` : "프로젝트 문의";
+        cta.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+    };
+    options.forEach((option) => option.addEventListener("change", update));
+    update();
+});
