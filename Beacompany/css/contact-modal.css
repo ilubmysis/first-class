@@ -51,12 +51,10 @@
 }
 .contact-modal textarea { min-height: 120px; resize: vertical; }
 .contact-modal input:focus, .contact-modal textarea:focus { outline: 0; border-bottom-color: var(--color-black); }
-.contact-modal-submit { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: auto; }
-.contact-modal-submit p { margin: 0; color: #888; font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.5; }
-.contact-modal-submit button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 14px; height: 56px; padding: 0 28px; border: 0; border-radius: 99px; background: var(--color-black); color: var(--color-white); font: 500 16px/1 var(--font-primary); letter-spacing: 1.2px; cursor: pointer; }
-.contact-modal-submit button span { display: inline-block; transition: transform 250ms ease; }
-.contact-modal-submit button:hover span, .contact-modal-submit button:focus-visible span { transform: translateX(6px); }
-.contact-modal-error { margin: -14px 0 0; color: #c0392b; font-family: "Pretendard Variable", sans-serif; font-size: 16px; }
+.contact-modal-submit { display: flex; justify-content: flex-end; align-items: center; gap: 20px; margin-top: auto; }
+.contact-modal-send { flex: 0 0 auto; text-decoration: none; display: inline-flex; align-items: center; gap: 14px; height: 56px; padding: 0 28px; border: 0; border-radius: 99px; background: var(--color-black); color: var(--color-white); font: 500 16px/1 var(--font-primary); letter-spacing: 1.2px; cursor: pointer; }
+.contact-modal-send span { display: inline-block; transition: transform 250ms ease; }
+.contact-modal-send:hover span, .contact-modal-send:focus-visible span { transform: translateX(6px); }
 body.has-modal { overflow: hidden; }
 
 @media (max-width: 900px) {
@@ -73,9 +71,9 @@ body.has-modal { overflow: hidden; }
   .contact-modal-info { grid-template-columns: 1fr; gap: 12px; }
   .contact-modal-row { grid-template-columns: 1fr; gap: 26px; }
   .contact-modal-submit { flex-direction: column; align-items: stretch; }
-  .contact-modal-submit button { justify-content: center; }
+  .contact-modal-send { justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .contact-modal[open] { animation: none; }
-  .contact-modal-submit button span, .contact-modal-fields label span { transition: none; }
+  .contact-modal-send span, .contact-modal-fields label span { transition: none; }
 }
