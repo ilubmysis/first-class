@@ -10,7 +10,6 @@
 .about-page .main-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--color-yellow); text-underline-offset: 6px; }
 
 /* 공통 라벨 / 제목 */
-.about-section-label { display: flex; gap: 26px; margin: 0 0 40px; color: #777; font-size: 16px; font-weight: 500; letter-spacing: 1.6px; }
 .about-page h2 { margin: 0; font-size: clamp(44px, 3.65vw, 70px); line-height: 1.05; letter-spacing: .01em; font-weight: 800; }
 .about-page h2 span { color: var(--color-gray); }
 
@@ -24,7 +23,6 @@
 .hero-panel::after { content: ""; position: absolute; inset: 50% 0 0; background: linear-gradient(transparent, rgba(10, 10, 10, .6)); pointer-events: none; }
 .hero-panel figcaption { z-index: 1; }
 .hero-panel figcaption { position: absolute; left: 24px; bottom: 22px; display: flex; gap: 14px; font-size: clamp(16px, 1.35vw, 26px); font-weight: 700; letter-spacing: 1px; }
-.hero-panel figcaption span { color: #aaa; font-weight: 500; font-size: 16px; padding-top: .3em; }
 .hero-panels:hover .hero-panel { opacity: .5; }
 .hero-panels .hero-panel:hover { flex-grow: 1.8; opacity: 1; }
 .about-hero-foot { display: flex; justify-content: space-between; padding-top: 18px; color: #888; font-size: 16px; letter-spacing: 1.3px; }
@@ -59,10 +57,8 @@
 .about-expertise { padding: 110px 20px 120px; }
 .expertise-item { scroll-margin-top: 40px; }
 .expertise-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 64px; }
-.expertise-heading > p { max-width: 430px; margin: 0; color: var(--color-gray); font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.7; }
 .expertise-list { border-top: 1px solid #0a0a0a; }
-.expertise-item { position: relative; display: grid; grid-template-columns: 60px minmax(240px, 1fr) minmax(260px, 1fr) 300px; align-items: center; gap: 24px; min-height: 200px; padding: 28px 0; border-bottom: 1px solid #d9d9d9; transition: background 250ms ease; }
-.expertise-number { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--color-black); color: var(--color-white); font-size: 16px; letter-spacing: 1px; }
+.expertise-item { position: relative; display: grid; grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) 300px; align-items: center; gap: 24px; min-height: 200px; padding: 28px 0; border-bottom: 1px solid #d9d9d9; transition: background 250ms ease; }
 .expertise-main h3 { margin: 0 0 14px; font-size: clamp(30px, 2.6vw, 50px); line-height: 1.1; font-weight: 500; }
 .expertise-main p { max-width: 380px; margin: 0; color: var(--color-gray); font-family: "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.6; word-break: keep-all; }
 .expertise-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -92,7 +88,7 @@
   .fields-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fields-list li:nth-child(3) { padding-left: 0; border-left: 0; }
   .philosophy-item { padding: 0 18px; min-height: 200px; }
-  .expertise-item { grid-template-columns: 52px minmax(0, 1fr) minmax(0, 1fr); }
+  .expertise-item { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .expertise-preview { display: none; }
 }
 @media (max-width: 560px) {
@@ -115,9 +111,7 @@
   .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
   .philosophy-item, .philosophy-item:first-child { min-height: 0; gap: 12px; padding: 0 0 32px; border-left: 0; border-bottom: 1px solid #333; }
   .expertise-heading { flex-direction: column; align-items: start; gap: 20px; margin-bottom: 40px; }
-  .expertise-item { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; min-height: 0; padding: 24px 0; }
-  .expertise-number { width: 36px; height: 36px; font-size: 16px; align-self: start; }
-  .expertise-tags { grid-column: 2; }
+  .expertise-item { grid-template-columns: minmax(0, 1fr); gap: 14px; min-height: 0; padding: 24px 0; }
   .expertise-main h3 { font-size: 34px; }
   .expertise-main p { font-size: 16px; }
   .expertise-tags span { font-size: 16px; }
