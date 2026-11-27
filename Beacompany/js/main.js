@@ -135,3 +135,28 @@ document.addEventListener("DOMContentLoaded", () => {
     options.forEach((option) => option.addEventListener("change", update));
     update();
 });
+
+// Partners: 로고를 클릭하면 띠가 멈추고 그 로고가 강조된다. 다시 누르거나 바깥을 누르면 해제.
+document.addEventListener("DOMContentLoaded", () => {
+    const marquee = document.querySelector(".partners-marquee");
+    if (!marquee) return;
+    const logos = marquee.querySelectorAll(".partner-logo");
+
+    const select = (key) => {
+        logos.forEach((logo) => {
+            const on = logo.dataset.partner === key;
+            logo.classList.toggle("is-active", on);
+            logo.setAttribute("aria-pressed", String(on));
+        });
+        marquee.classList.toggle("is-paused", Boolean(key));
+    };
+
+    logos.forEach((logo) => {
+        logo.addEventListener("click", (event) => {
+            event.stopPropagation();
+            select(logo.classList.contains("is-active") ? null : logo.dataset.partner);
+        });
+    });
+    document.addEventListener("click", () => select(null));
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") select(null); });
+});

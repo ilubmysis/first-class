@@ -3,7 +3,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BE:A COMPANY</title>
 <link rel="stylesheet" href="../css/default.css"><link rel="stylesheet" href="../font/css/pretendardvariable.css"><link rel="stylesheet" href="css/main.css">
-<script src="js/main.js?v=6" defer></script></head><body><div id="wrap">
+<script src="js/main.js?v=7" defer></script></head><body><div id="wrap">
 <header class="site-header"><div class="header-inner">
 <a class="brand-mark" href="#" aria-label="BE:A Company home"><img src="img/logo_white.svg" alt="BE:A Company"></a>
 <nav class="main-nav" aria-label="Main navigation"><a href="about.html">ABOUT</a><a href="projects.html">PROJECTS</a></nav>
@@ -85,13 +85,25 @@
   <div class="partners-inner">
     <h2 class="partners-title">PARTNERS</h2>
     <p class="partners-description">함께 프로젝트를 만들어 온 파트너</p>
-    <div class="partners-grid" aria-label="파트너 이미지 목록">
-        <button class="partner-card" type="button" aria-label="동부건설 Dongbu Corporation"><img src="img/partner_dongbu.png" alt="동부건설 Dongbu Corporation 로고"></button>
-        <button class="partner-card" type="button" aria-label="MATPLAZA"><img src="img/partner_matplaza.png" alt="MATPLAZA 로고"></button>
-        <button class="partner-card" type="button" aria-label="순천시 Suncheon-si"><img src="img/순천시new.svg" alt="순천시 Suncheon-si 로고"></button>
-        <button class="partner-card" type="button" aria-label="한국토지주택공사 LH"><img src="img/한국토지.svg" alt="한국토지주택공사 LH 로고"></button>
-        <button class="partner-card" type="button" aria-label="현대건설"><img src="img/현대건설.svg" alt="현대건설 로고"></button>
-        <button class="partner-card" type="button" aria-label="서초구 Seocho-gu"><img src="img/partner_seocho.png" alt="서초구 Seocho-gu 로고"></button>
+    <div class="partners-marquee" aria-label="파트너 로고 목록">
+      <div class="partners-track">
+        <div class="partners-group">
+          <button class="partner-logo" type="button" data-partner="dongbu" aria-pressed="false"><img src="img/partner_dongbu.png" alt="동부건설"></button>
+          <button class="partner-logo" type="button" data-partner="matplaza" aria-pressed="false"><img src="img/partner_matplaza.png" alt="MATPLAZA"></button>
+          <button class="partner-logo" type="button" data-partner="suncheon" aria-pressed="false"><img src="img/순천시new.svg" alt="순천시"></button>
+          <button class="partner-logo" type="button" data-partner="lh" aria-pressed="false"><img src="img/한국토지.svg" alt="LH 한국토지주택공사"></button>
+          <button class="partner-logo" type="button" data-partner="hyundai" aria-pressed="false"><img src="img/현대건설.svg" alt="현대건설"></button>
+          <button class="partner-logo" type="button" data-partner="seocho" aria-pressed="false"><img src="img/partner_seocho.png" alt="서초구"></button>
+        </div>
+        <div class="partners-group" aria-hidden="true">
+          <button class="partner-logo" type="button" data-partner="dongbu" tabindex="-1" aria-pressed="false"><img src="img/partner_dongbu.png" alt=""></button>
+          <button class="partner-logo" type="button" data-partner="matplaza" tabindex="-1" aria-pressed="false"><img src="img/partner_matplaza.png" alt=""></button>
+          <button class="partner-logo" type="button" data-partner="suncheon" tabindex="-1" aria-pressed="false"><img src="img/순천시new.svg" alt=""></button>
+          <button class="partner-logo" type="button" data-partner="lh" tabindex="-1" aria-pressed="false"><img src="img/한국토지.svg" alt=""></button>
+          <button class="partner-logo" type="button" data-partner="hyundai" tabindex="-1" aria-pressed="false"><img src="img/현대건설.svg" alt=""></button>
+          <button class="partner-logo" type="button" data-partner="seocho" tabindex="-1" aria-pressed="false"><img src="img/partner_seocho.png" alt=""></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

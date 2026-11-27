@@ -1012,3 +1012,47 @@
   .services-head > h3 { font-size: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .section-cta span, .service-card { transition: none; } }
+
+/* Partners: 흐르는 로고 띠 + hover/click 인터랙션 (위 .partners-marquee 재사용) */
+.partners-sec .partners-marquee {
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.partners-track { animation-duration: 32s; }
+.partners-marquee:hover .partners-track,
+.partners-marquee:focus-within .partners-track,
+.partners-marquee.is-paused .partners-track { animation-play-state: paused; }
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 12px 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.partner-logo img {
+  filter: brightness(0) invert(1);
+  opacity: .55;
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+.partners-marquee:hover .partner-logo img,
+.partners-marquee.is-paused .partner-logo img { opacity: .2; }
+.partners-marquee .partner-logo:hover img,
+.partners-marquee .partner-logo:focus-visible img,
+.partners-marquee .partner-logo.is-active img { opacity: 1; transform: scale(1.12); }
+.partner-logo:active img { transform: scale(.96); }
+.partner-logo:focus-visible { outline: 1px solid var(--color-yellow); outline-offset: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  .partner-logo img { transition: none; }
+  .partners-sec .partners-marquee { -webkit-mask-image: none; mask-image: none; }
+}
+.partner-logo[data-partner="dongbu"] img,
+.partner-logo[data-partner="seocho"] img { height: 84px; }
+@media (max-width: 700px) {
+  .partner-logo[data-partner="dongbu"] img,
+  .partner-logo[data-partner="seocho"] img { height: 62px; }
+}
